@@ -2,47 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>High Country Outlaw</title>
+  <title>420 Golden Age</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: url('https://images.unsplash.com/photo-1603428455122-19ab1fb9a2b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-      background-size: cover;
+      background: #000000; /* Black background for now */
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #00ffcc;
       font-family: 'Courier New', Courier, monospace;
-      color: #f2f2f2;
-      text-align: center;
-    }
-    .container {
-      padding: 50px 20px;
-      background-color: rgba(0, 0, 0, 0.5);
-      margin: 80px auto;
-      max-width: 600px;
-      border-radius: 10px;
+      text-shadow: 2px 2px 8px #00ffcc;
     }
     h1 {
       font-size: 3em;
-      margin-bottom: 10px;
+      animation: rise 4s ease-out forwards;
+      opacity: 0;
     }
     p {
+      margin-top: 10px;
+      font-size: 1.5em;
+      opacity: 0.8;
+    }
+    @keyframes rise {
+      0% {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .hidden-message {
+      display: none;
+      position: absolute;
+      bottom: 20px;
       font-size: 1.2em;
-    }
-    a {
-      color: #ffd700;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
+      color: #00ffcc;
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <h1>High Country Outlaw</h1>
-    <p>Living free. 420 vibes. Off-grid, off-chain.<br>Campfire lit. Ride or die.</p>
-    <p>Support the mission: <a href="#">Donate Crypto</a></p>
+<body onclick="showMessage()">
+  <h1>420 Golden Age</h1>
+  <p>Freedom Lives Here</p>
+  <div class="hidden-message" id="secret">
+    Outlaws Never Die — High Country Forever.
   </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById('secret').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
